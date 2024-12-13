@@ -35,10 +35,19 @@ este objeto, um novo campo será criado.*/
     fs.writeFileSync("livros.json", JSON.stringify(livrosAtuais) )
 }
 
+function apagarLivro(id){
+    const livros = JSON.parse(fs.readFileSync("livros.json"))
+    const livroFiltrado = livros.filter( livro => livro.id !== id)
+
+    fs.writeFileSync("livros.json", JSON.stringify(livroFiltrado) )
+
+}
+
 
 module.exports = {
     getTodosLivros,
     getLivrosPorId,
     insereLivro,
-    modificaLivro
+    modificaLivro,
+    apagarLivro
 }
