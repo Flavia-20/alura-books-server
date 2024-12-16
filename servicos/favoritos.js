@@ -4,14 +4,14 @@ function getTodosFavoritos(){
     return JSON.parse(fs.readFileSync("favoritos.json"))
 }
 
-function deletaFavoritoPorId(id){
+function deletaFavoritosPorId(id){
     const livros = JSON.parse(fs.readFileSync("favoritos.json"))
    
     const livroFiltrado = livros.filter( livro => livro.id !== id)
     fs.writeFileSync("favoritos.json", JSON.stringify(livroFiltrado) )
 }
 
-function insereFavorito(id){
+function insereFavoritos(id){
     const livros = JSON.parse(fs.readFileSync("livros.json"))
     const favoritos = JSON.parse(fs.readFileSync("favoritos.json"))
 
@@ -24,6 +24,6 @@ function insereFavorito(id){
 
 module.exports = {
     getTodosFavoritos,
-    deletaFavoritoPorId,
-    insereFavorito
+    deletaFavoritosPorId,
+    insereFavoritos
 }
