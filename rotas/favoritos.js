@@ -5,9 +5,9 @@ const router = Router()
 
 router.get('/', getFavoritos) 
 
-router.get('/:id', postFavoritos) 
+router.post('/:id', postFavoritos) 
 
-router.patch('/:id', deleteFavoritos)
+router.delete('/:id', deleteFavoritos)
 
 module.exports = router
 //exporta essa rota
